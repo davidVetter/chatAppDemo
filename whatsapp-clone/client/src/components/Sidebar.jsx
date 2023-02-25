@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tab, Nav } from "react-bootstrap";
+import Contacts from "./Contacts";
 import Conversations from "./Conversations";
 
 const CONVERSATIONS_KEY = "conversations";
@@ -21,6 +22,11 @@ export default function Sidebar({ id }) {
         <Tab.Content>
           <Tab.Pane eventKey={CONVERSATIONS_KEY}>
             <Conversations />
+          </Tab.Pane>
+        </Tab.Content>
+        <Tab.Content>
+          <Tab.Pane eventKey={CONTACTS_KEY}>
+            <Contacts />
           </Tab.Pane>
         </Tab.Content>
         In the sidebar: {id}
