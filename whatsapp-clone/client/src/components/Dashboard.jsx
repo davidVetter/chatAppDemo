@@ -10,7 +10,6 @@ export default function Dashboard({ id, logout }) {
     <>
       <h1>Dashboard</h1>
       <Sidebar id={id} />
-      <h4>Current user: {id}</h4>
       <Button onClick={handleLogout}>Logout</Button>
     </>
   );

@@ -29,7 +29,6 @@ export default function Sidebar({ id }) {
             <Contacts />
           </Tab.Pane>
         </Tab.Content>
-        In the sidebar: {id}
       </Tab.Container>
     </div>
   );
