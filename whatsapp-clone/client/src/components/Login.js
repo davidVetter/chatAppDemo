@@ -1,14 +1,18 @@
 import { React, useRef } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import { v4 as uuidV4 } from 'uuid';
 
 export default function Login({ onIdSubmit }) {
   const idRef = useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('This is your value: ', idRef.current.value);
     onIdSubmit(idRef.current.value);
     idRef.current.value = '';
+  }
+
+  function createNewId() {
+    onIdSubmit(uuidV4())
   }
 
   return (
@@ -19,7 +23,7 @@ export default function Login({ onIdSubmit }) {
           <Form.Control type="text" ref={idRef} required></Form.Control>
         </Form.Group>
         <Button type='submit' className='me-2'>Login</Button>
-        <Button variant="secondary">Create A New Id</Button>
+        <Button onClick={createNewId} variant="secondary">Create A New Id</Button>
       </Form>
     </Container>
   );
