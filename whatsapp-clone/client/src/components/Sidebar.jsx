@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Tab, Nav, Button, Modal } from "react-bootstrap";
 import Contacts from "./Contacts";
 import Conversations from "./Conversations";
-import NewContactsModal from "./modals/NewContactsModal";
+import NewContactModal from "./modals/NewContactModal";
 import NewConversationModal from "./modals/NewConversationModal";
 
 const CONVERSATIONS_KEY = "conversations";
@@ -46,7 +46,7 @@ export default function Sidebar({ id }) {
       <Modal show={modalOpen} onHide={closeModal}>
         {conversationsOpen ?
             <NewConversationModal closeModal={closeModal} /> :
-            <NewContactsModal closeModal={closeModal} />
+            <NewContactModal closeModal={closeModal} />
         }
       </Modal>
     </div>

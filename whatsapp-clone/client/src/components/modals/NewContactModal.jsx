@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NewContactsModal() {
+export default function NewContactModal() {
   return (
     <div>New Contact Modal</div>
   )
