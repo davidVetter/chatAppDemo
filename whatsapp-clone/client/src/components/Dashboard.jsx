@@ -7,10 +7,9 @@ export default function Dashboard({ id, logout }) {
     logout("");
   }
   return (
-    <>
-      <h1>Dashboard</h1>
+    <div className="d-flex" style={{height: '100vh'}}>
       <Sidebar id={id} />
-      <Button onClick={handleLogout}>Logout</Button>
-    </>
+      {/* <Button onClick={handleLogout}>Logout</Button> */}
+    </div>
   );
 }
