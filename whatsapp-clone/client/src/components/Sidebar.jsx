@@ -31,7 +31,7 @@ export default function Sidebar({ id }) {
         <div className="p-2 border-top border-end small">
             Your Id: <span className="text-muted">{id}</span>
         </div>
-        <Button>
+        <Button className="rounded-0">
             New {conversationsOpen ? 'Conversation' : 'Contact'}
         </Button>
       </Tab.Container>
