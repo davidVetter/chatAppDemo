@@ -11,7 +11,7 @@ function getSavedValue(key, initialValue) {
 }
 
 export default function useLocalStorage(key, initialValue) {
-    console.log('This is key in local: ', key);
+    // console.log('This is key in local: ', key);
     const prefixedKey = PREFIX + key;
     const [value, setValue] = useState(() => {
     return getSavedValue(prefixedKey, initialValue);
