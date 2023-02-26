@@ -19,7 +19,7 @@ export function ConversationsProvider( { children }) {
     }
 
     const formattedConversations = conversations.map(conversation => {
-        if (conversation.length < 1) return [];
+        // if (conversation.length < 1) return [];
         const recipients = conversation.recipients.map(recipient => {
             const contact = contacts.find(contact => {
                 return contact.id === recipient;

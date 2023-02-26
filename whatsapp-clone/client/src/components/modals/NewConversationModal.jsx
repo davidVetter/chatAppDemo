@@ -10,6 +10,7 @@ export default function NewConversationModal({ closeModal }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (selectedContactIds.length < 1) return;
     createConversation(selectedContactIds);
     closeModal();
   }
