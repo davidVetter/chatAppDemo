@@ -2,13 +2,16 @@ import Login from "./Login";
 import useLocalStorage from "../hooks/useLocalStorage";
 import Dashboard from "./Dashboard";
 import { ContactsProvider } from "../contexts/ContactsProvider";
+import { ConversationsProvider } from "../contexts/ConversationsProvider";
 
 function App() {
   const [id, setId] = useLocalStorage('id');
 
   const dashboard = (
     <ContactsProvider>
-      <Dashboard id={id} logout={setId}/>
+      <ConversationsProvider>
+        <Dashboard id={id} logout={setId}/>
+      </ConversationsProvider>
     </ContactsProvider>
   )
 
