@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useContacts } from "../../contexts/ContactsProvider";
+import { useConversations } from "../../contexts/ConversationsProvider";
 
 export default function NewConversationModal() {
   const [selectedContactIds, setSelectedContactsIds] = useState([]);
   const { contacts } = useContacts();
+  const { createConversation } = useConversations();
 
   function handleSubmit(e) {
     e.preventDefault();
