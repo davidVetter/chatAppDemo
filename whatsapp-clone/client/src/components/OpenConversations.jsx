@@ -1,14 +1,22 @@
 import { useState } from "react";
-import { Form, InputGroup } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
+import { useConversations } from "../contexts/ConversationsProvider";
 
 export default function OpenConversations() {
   const [text, setText] = useState('');
+  const { sendMessage, selectedConversion } = useConversations();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    sendMessage(selectedConversion.recipients.map(r => r.id), text);
+    setText('');
+  }
   return (
     <div className="d-flex flex-column flex-grow-1">
       <div className="flex-grow-1 overflow-auto">
 
       </div>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="m-2">
           <InputGroup>
             <Form.Control
@@ -18,6 +26,7 @@ export default function OpenConversations() {
               onChange={(e) => setText(e.target.value)}
               style={{ height: '75px', resize: 'none'}}
             />
+            <Button type="submit">Send</Button>
           </InputGroup>
         </Form.Group>
       </Form>
