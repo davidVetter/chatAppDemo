@@ -32,8 +32,8 @@ export default function OpenConversations() {
                 ref={lastMessage ? setRef : null}
                 key={index}
                 className={`${
-                  message.fromMe ? "align-self-end" : ""
-                }my-1 d-flex flex-column`}
+                  message.fromMe ? "align-self-end align-items-end" : "align-items-start"
+                } my-1 d-flex flex-column`}
               >
                 <div
                   className={`${
